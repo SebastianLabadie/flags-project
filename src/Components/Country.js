@@ -3,29 +3,40 @@ import styled from  'styled-components'
 import {useHistory} from 'react-router-dom'
 
 const CountryStyled= styled.div`
-    width: 264px;
+    cursor:pointer;
     text-align:left;
     border-radius:5px;
-    overflow:hidden;
     box-shadow:0 0 7px 2px rgba(0,0,0,.15);
-    margin:1em;
+    
+    &:hover .details{
+        border:1px solid var(--black);
+        border-radius:0 0 5px 5px;
+        border-top:none;
+    }
     img{
         width: 100% ;
         height: 160px;
         object-fit:cover;
+        border-radius: 5px 5px 0 0;
+        vertical-align:top;
+        
     }
     .details{
-        padding:1.5em;
+        padding: 1.5em;
+        border: 1px solid transparent;
+        border-top: none;
+        transition: .2s border;
+        background: var(--white);
     }
     h2{
         margin:0px;
         margin-bottom:1rem;
         font-size:18px;
-        font-weight:600;
+        font-weight:700;
     }
     p{
         font-size:.9em;
-        margin-bottom:0.3rem;
+        margin-bottom:0.5rem;
     }
 `   
     

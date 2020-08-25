@@ -2,15 +2,17 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Country from './Country'
 import { useDispatch,useSelector } from 'react-redux'
+import Wrapper from './Wrapper'
 
 const CountryListStyled = styled.div`
   display: grid;
   grid-row-gap: 2.3em;
-  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-auto-flow:columns;
+  grid-column-gap: 66px;
+  grid-template-columns: repeat(auto-fill, 270px);
   background: var(--background);
   justify-content: center;
-  border: 1px solid red;
-  padding: 4em 2em;
+  padding: 3em 0;
 `
 
 function CountryList() {
@@ -38,12 +40,10 @@ function CountryList() {
         return response.json()
       })
       .then((list) => {
-        console.log(list)
         dispatch({
           type: 'SET_COUNTRY_LIST',
           payload: list
         })
-        console.log(list)
       })
       .catch(() => {
         console.log('hubo un error, que dolor que dolo que pena')
@@ -53,23 +53,25 @@ function CountryList() {
   
 
   return (
+      <Wrapper> 
     <CountryListStyled>
+        {
+          countryList.map(({ name, flag, population, capital, region, }) => {
+            return (
+              <Country
+                flag={flag}
+                name={name}
+                key={name}
+                population={population}
+                region={region}
+                capital={capital}
+              />
+            )
+          })
+        }
       
-      {
-        countryList.map(({ name, flag, population, capital, region, }) => {
-          return (
-            <Country
-              flag={flag}
-              name={name}
-              key={name}
-              population={population}
-              region={region}
-              capital={capital}
-            />
-          )
-        })
-      }
     </CountryListStyled>
+      </Wrapper>
   )
 }
 

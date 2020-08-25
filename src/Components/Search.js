@@ -9,7 +9,7 @@ const SearchStyled = styled.div`
   .close {
     position: absolute;
     right: 1em;
-    top: 1em;
+    top: 1.2em;
     border-radius: 50%;
     border: none;
     box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);

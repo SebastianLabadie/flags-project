@@ -2,13 +2,34 @@ html{
     font-size: 16px;
 }
 
-:root{
-    --black:#111517;
-    --white:#fff;
-    --background-light:#fafafa;
-}
+main {
+    color: var(--black);
+    background: var(--background);
+    min-height: 100vh;
+  }
 body{
     background: var(--background-light);
     font-family: 'Nunito Sans', sans-serif;
     color:var(--black);
 }
+
+
+.is-dark-mode {
+    --black: white;
+    --white: #273542;
+    --background: #1a2833;
+  }
+  
+  .is-light-mode {
+    --black: #111517;
+    --white: white;
+    --background: #fafafa;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --black: white;
+      --white: #273542;
+      --background: #1a2833;
+    }
+  }

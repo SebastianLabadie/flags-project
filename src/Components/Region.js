@@ -8,7 +8,8 @@ const RegionFilterStyled = styled.select`
   border-radius: 5px;
   outline: 0;
   box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
-  width:50%;
+ background:var(--white);
+ color:var(--black);
 `
 
 const filterByRegionAction = (regionSelected) => {
