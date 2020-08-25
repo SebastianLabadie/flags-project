@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from  'styled-components'
+import {useHistory} from 'react-router-dom'
 
 const CountryStyled= styled.div`
     width: 264px;
@@ -26,13 +27,19 @@ const CountryStyled= styled.div`
         font-size:.9em;
         margin-bottom:0.3rem;
     }
-`
+`   
     
 
 
+
 function Country({flag,name,population,region,capital}) {
+    
+     const history=useHistory()
+    const handleClick=()=>{
+        history.push(`/country/${name}`)
+    }
     return (
-        <CountryStyled> 
+        <CountryStyled onClick={handleClick}> 
             
             <img loading="lazy" src={flag} alt="flag img"/>
             <div className="details">
