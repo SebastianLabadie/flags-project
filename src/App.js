@@ -7,6 +7,7 @@ import {Region} from './Components/Region';
 
 const initialState = {
   countryList: [],
+  countryListByName: [],
   coutryFilteredByRegion: [],
   filterByRegion: '',
 }
@@ -16,6 +17,12 @@ function reducer(state, action) {
   switch (action.type) {
     case 'SET_COUNTRY_LIST': {
       return { ...state, countryList: action.payload}
+    }
+
+    case 'SET_COUNTRY_BY_NAME': {
+      const countryListByName = state.countryList
+      .filter(country => country.name.toLowerCase().includes(action.payload.toLowerCase()))
+      return {...state, countryListByName }
     }
 
     case 'FILTER_BY_REGION': {
