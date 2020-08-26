@@ -6,7 +6,7 @@ import { createStore } from "redux";
 import Reducer from "./Redux/Reducer";
 import ActionList from "./Components/Action-List";
 import Header from "./Components/Header";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CountryPage from './Pages/Country-Page'
 
 
