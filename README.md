@@ -4,7 +4,7 @@ Frontend challenge with api integration.
 # Live Demo
 Visit live demo at <https://sebastianlabadie.github.io/flags-project/>
 
-![](screenshots.png)
+![](screenshot.png)
 
 ### Install Dependencies
 ```sh
